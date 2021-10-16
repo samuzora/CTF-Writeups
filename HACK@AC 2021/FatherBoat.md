@@ -1,6 +1,8 @@
-# FatherBoat (Web) \n
-Difficulty: Hard \n
-Solves: 0 :< \n
+# FatherBoat (Web)
+Difficulty: Hard
+
+Solves: 0 :<
+
 Link: http://139.59.124.129:51000/
 
 Intended Solution:
