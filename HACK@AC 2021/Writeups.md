@@ -39,6 +39,7 @@ Intended Solution:
   Explanation: After verifying ourselves as the admin, we can successfully submit stories. However, upon submitting a story, the website prompts us that "Server-side story sharing" has yet to be implemented. This is a direct hint towards Server Side Template Injection (SSTI), so one can test for possible SSTI with ``{{7*7}} or {{7*'7'}}``. Then at a loss of what exactly to do, one might attempt `{{config.items()}}` and stumble upon 2 important key-value pairs: `('BUILT_IN', 'get_file()'), ('FLAG', 'flag.txt')`. Afterwards it's easy, just `{{get_file('flag.txt')}}` to get the flag, `ACSI{gr4ndf4th3r_v3ssel}`.
 
 Comments:
+
 This challenge was made quite last minute, as we were kinda short of hard web challenges. The puppeteer was especially hard to set up. Originally I tried using the Python import of puppeteer, pyppeteer, but it turned out to be a nightmare. Afterwards I just set up an API for the JS puppeteer and the Python flask app to interact. According to inside info, HCI had already solved the XSS part, but they realized it was a multi-part challenge and just gave up :(. Hence 0 solves
 
 ## Misc
@@ -57,4 +58,8 @@ Intended Solution:
 
 **Zip Slip**
 
-The intended (obvious) solution was to exploit the fact that the bot only accepted .zip files in the !upload command. Admittedly, without sufficient experience this might have been hard to spot, but granted that the participants were allowed to google I thought that this wouldn't be too difficult. Anyway, the 2-liner command to generate the symlink and zip it is as follows: `ln -s /flag.txt link; zip -y payload.zip link`. Then !upload `payload.zip` and the bot will return the flag, `ACSI{symb0l1c_link5}`.
+The intended (obvious) solution was to exploit the fact that the bot only accepted .zip files in the !upload command. Admittedly, without sufficient experience this might have been hard to spot, but granted that the participants were allowed to google I thought that this wouldn't be too difficult. Anyway, the 2-liner command to generate the symlink and zip it is as follows: `ln -s /flag.txt link; zip -y payload.zip link`. Then !upload `payload.zip` and the bot will return the flag, `ACSI{symb0l1c_link5}`. For more info, click [here](https://snyk.io/research/zip-slip-vulnerability).
+
+Comments:
+
+I really underestimated the difficulty of this challenge. Originally, it was a much simpler and much easier directory traversal via the !image command which allows one to view any image/file in the bot's machine. However, *a certain person* said it was too easy and suggested a zip slip vulnerability instead. Sorry to all who attempted this challenge, I've heard your cries for *!help*, and will tone down the difficulty of similar challenges in the future. For the record, a total of 3 hints were given for this challenge, and a 4th would have been given had a certain flag hoarder from HCI not submitted his flag.
