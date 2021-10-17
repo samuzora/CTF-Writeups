@@ -84,7 +84,10 @@ v6 = len(v18)
 
 v6 = len(v24)
 v12 = str(v18+2)[:(v6-7)]
-v15 += v12``` Lastly, we come to a very primitive XOR gate, where v23 is xored with v15 to get our output. Pseudocode (python-like) of what just happened: ```s = input()
+v15 += v12
+``` 
+Lastly, we come to a very primitive XOR gate, where v23 is xored with v15 to get our output. Pseudocode (python-like) of what just happened: 
+```s = input()
 random.seed(69420)
 v28 = 0
 v69 = len(s)
