@@ -76,7 +76,9 @@ Author: Elijah
 
 Solution:
 
-(According to Elijah, I can just ignore all the mallocs so here goes nothing.) Decompile the provided binary in IDA64. First important line is `scanf("%s", s);`, this just takes in the user input into `s`. Also we have `srand(0x10F2Cu);`, which sets the seed to 69420 in decimal. Next is `v67 = 8 * ((unsigned __int64)&v9[7] >> 3);`, which apparently makes `v67` a pointer to `s` (idk how). Afterwards we have a for loop, which loops through `s` and calls `(rand() % 21 + 69) * s[i]` into v25. Note that the output of rand() can be replicated as the seed is known. Then `s[i] = v25`. Then `  strcpy(v23, "01011100011001010111010001111001010110010010011101110100000100110100000111011001011110101000001001010110010011110010101011101101010000000010000101000011100000100111010001000011010110100011101000101000");` just means that v23 is set to `01011100011001010111010001111001010110010010011101110100000100110100000111011001011110101000001001010110010011110010101011101101010000000010000101000011100000100111010001000011010110100011101000101000` (important btw). Now we have another loop, which just loops through `s` and `dest += hex(s[i])`. Skipping through 25+ lines of arbitrary mallocs wait nvm we can't skim through cos the important statements are here and there... Brief summary: ```v24 = unhex(dest)
+(According to Elijah, I can just ignore all the mallocs so here goes nothing.) Decompile the provided binary in IDA64. First important line is `scanf("%s", s);`, this just takes in the user input into `s`. Also we have `srand(0x10F2Cu);`, which sets the seed to 69420 in decimal. Next is `v67 = 8 * ((unsigned __int64)&v9[7] >> 3);`, which apparently makes `v67` a pointer to `s` (idk how). Afterwards we have a for loop, which loops through `s` and calls `(rand() % 21 + 69) * s[i]` into v25. Note that the output of rand() can be replicated as the seed is known. Then `s[i] = v25`. Then `  strcpy(v23, "01011100011001010111010001111001010110010010011101110100000100110100000111011001011110101000001001010110010011110010101011101101010000000010000101000011100000100111010001000011010110100011101000101000");` just means that v23 is set to `01011100011001010111010001111001010110010010011101110100000100110100000111011001011110101000001001010110010011110010101011101101010000000010000101000011100000100111010001000011010110100011101000101000` (important btw). Now we have another loop, which just loops through `s` and `dest += hex(s[i])`. Skipping through 25+ lines of arbitrary mallocs wait nvm we can't skim through cos the important statements are here and there... Brief summary: 
+
+```v24 = unhex(dest)
 v18 = binary(v24)
 v6 = len(v18)
 
@@ -123,6 +125,7 @@ for i in range(v33):
     else:
 		v9[i] = '1'
 
-print(v9)```
+print(v9)
+```
 
 The way to approach this problem is to work backwards with what we have. So assuming the start of the output we want is ACSI{, we can work backwards to find out that `dest = 1d26 2730 22...` in hex. Afterwards, an RNG script was written in C to replicate `v4 = rand()`. Then converting each byte in `dest` to decimal and dividing it by the respective `v4`s, we obtain `[r` in binary converted to ASCII. Wait did I mention that `strcpy(s, "[redacted]");` was important? `strcpy(s, "[redacted]");` is important. Now, realize that Elijah is a sadist who likes to watch people suffer with the key right under their nose and decompile horrendous C code with mallocs littered everywhere and the correct input is actually `[redacted]`, so go ahead and input that to obtain the flag, `ACSI{th3_he4p_1s_a_1ie}`. Overall this challenge was ~~A NIGHTMARE THAT I SPENT 2 WEEKS ON~~ pretty easy. I hope you understand why this challenge was unreleased.
