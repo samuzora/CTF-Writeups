@@ -6,7 +6,7 @@ HACK@AC is a CTF organized by the Anglo-Chinese School (Independent) Robotics Te
 
 [Misc](#misc)
 
-[Unreleased](##Special---Unreleased)
+[Unreleased](#unreleased)
 
 
 
@@ -62,7 +62,7 @@ Comments:
 
 I really underestimated the difficulty of this challenge. Originally, it was a much simpler and much easier directory traversal via the !image command which allows one to view any image/file in the bot's machine. However, *a certain person* said it was too easy and suggested a zip slip vulnerability instead. Sorry to all who attempted this challenge, I've heard your cries for *!help*, and will tone down the difficulty of similar challenges in the future. For the record, a total of 3 hints were given for this challenge, and a 4th would have been given had a certain flag hoarder from HCI not submitted his flag.
 
-## Special - Unreleased
+## Unreleased
 
 ### revnew (RE)
 
