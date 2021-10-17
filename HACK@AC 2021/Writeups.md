@@ -2,9 +2,9 @@
 
 HACK@AC is a CTF organized by the Anglo-Chinese School (Independent) Robotics Technology Society, held on 16 Oct 2021. I was part of the organizing team and made a grand total of 4 challenges (one got removed later on). It was generally quite a fun experience for all (excluding !help) and I learnt quite a bit from organizing this CTF, from dockerizing applications to debugging trivial typos. Below are writeups for some of the challenges, both made by me and by others.
 
-[Web](##Web)
+[Web](#web)
 
-[Misc](##Misc)
+[Misc](#misc)
 
 [Unreleased](##Special---Unreleased)
 
