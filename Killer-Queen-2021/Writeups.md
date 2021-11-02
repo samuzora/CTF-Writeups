@@ -126,7 +126,7 @@ Now a for loop is being initialized.
 
 The [enumerate](https://www.w3schools.com/python/ref_func_enumerate.asp) function is loaded and called on a. [`GET_ITER`](https://docs.python.org/3/library/dis.html#opcode-GET_ITER) preps the TOS as an iterable, and `FOR_ITER` initializes the for loop. Notice the `>>`, this marks the start of the for loop, and all lines after this will be looped, until the next `>>`. `48  (to 78)` tells us that `len(a) == 78 - 48 == 30`. This fixed value is possible as it is compiled code, so everything is fixed, not variable. Lastly, `i = enumerate(a)[0]`, and `b = enumerate(a)[1]`. 
 
-The next few are simple statements, and you can refer to the [full solution](sneeki snek/solution/sneekisnek.py) for a step-by-step script. Lastly the flag is printed, and hopefully if we've done everything right, we'll get the flag (and we do), `kqctf{dont_be_mean_to_snek_:(}`.
+The next few are simple statements, and you can refer to the [full solution](sneeki-snek/solution/sneekisnek.py) for a step-by-step script. Lastly the flag is printed, and hopefully if we've done everything right, we'll get the flag (and we do), `kqctf{dont_be_mean_to_snek_:(}`.
 
 ## sneeki snek 2
 
