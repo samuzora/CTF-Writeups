@@ -122,7 +122,7 @@ This is important for many operators later on, so grasping this concept is essen
 
 Now a for loop is being initialized.
 
-![for loop chunk](images/sneeksnek1.png)
+![for loop chunk](images/sneekisnek1.png)
 
 The [enumerate](https://www.w3schools.com/python/ref_func_enumerate.asp) function is loaded and called on a. [`GET_ITER`](https://docs.python.org/3/library/dis.html#opcode-GET_ITER) preps the TOS as an iterable, and `FOR_ITER` initializes the for loop. Notice the `>>`, this marks the start of the for loop, and all lines after this will be looped, until the next `>>`. `48  (to 78)` tells us that `len(a) == 78 - 48 == 30`. This fixed value is possible as it is compiled code, so everything is fixed, not variable. Lastly, `i = enumerate(a)[0]`, and `b = enumerate(a)[1]`. 
 
