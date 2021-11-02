@@ -1,5 +1,0 @@
-Follow TCP stream to find the user's (hashed) password. 
-
-Using hashcat: .\hashcat.exe -a 0 -m 0 .\.hash .\rockyou.dict
-
-Flag: kqctf{dancingqueen}
