@@ -20,7 +20,7 @@ Now comes the escape portion. First I tried using b64d recursively to escape ill
 
 Then I realized that we're given chr(), and 1, 4, and 6. In my script, you can see my pathetic attempt to take advantage of this. I printed the ord of all illegal characters and manually decomposed them to math statements with 1, 4 and 6. After a painstaking hour or so, I was finally done with my first payload, and hoped for the best...
 
-As expected it didn't work. After trying a few more payloads (most of them became too long for the limit of 161 chars) I finally gave up and went on to do other challs. The scripts and other stuff I suffered much to make can be found in this folder
+As expected it didn't work. After trying a few more payloads (most of them became too long for the limit of 161 chars) I finally gave up and went on to do other challs. The scripts and other stuff can be found in this folder
 
 ---
 
