@@ -27,4 +27,4 @@ What bytes([c ^ key for c in str]) does: stores the value of c in an iterable fo
 
 bytes.fromhex() converts the input from hex into a byte literal (note: byte literal are actually arrays of ints from 0-255 in Python; thus for byte object b=b'abc', b[0] == ord('a') == 97. This was really confusing for me as byte objects accept and output valid ASCII bytes, so I assumed that byte objects were just byte strings. (For non-ASCII bytes, they must be properly escaped via '\x'.))
 
-Lastly, I check for the flag format in the byte object. Flag: dam{antman_EXPANDS_inside_tHaNoS_never_sinGLE_cHaR_xOr_yeet}
+Lastly, I check for the flag format in the byte object. Flag: b'dam{antman_EXPANDS_inside_tHaNoS_never_sinGLE_cHaR_xOr_yeet}'
