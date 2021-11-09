@@ -10,10 +10,12 @@ Hint: Always operate on raw bytes, never on encoded strings. Flag must be submit
 
 XOR Encryption: Performs eXclusive-OR operations on individual bytes of plaintext and key (pt[0] ^ key[0]) 
 
+```
 1 ^ 1 = 0
 0 ^ 1 = 1
 1 ^ 0 = 1
 0 ^ 0 = 0
+```
 
 In Python, the XOR operator is the caret (^)
 
